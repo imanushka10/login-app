@@ -1,28 +1,108 @@
+//import React, { useState } from 'react'
+// import "./main.css"
+// import TaskItem from './TaskItem';
+// import { BsPlusCircleFill } from "react-icons/bs";
+// import AddNewPopUp from "./NewPopUp"
+// import styled from "styled-components";
+// const TaskContainer = ({ id, name, task, handleInnerTaskChange, handleNewTaskContainer }) => {
+
+//     const [modalIsOpen, setModalFlag] = React.useState(false);
+
+//     function handleNewTask(header) {
+//         handleNewTaskContainer(id, header)
+//     }
+
+//     const handleTaskContainer = (inneridx, header, text, date, isCompleted) => {
+//         handleInnerTaskChange(id, inneridx, header, text, date, isCompleted)
+//     }
+
+//     const StyledNameHeading = styled.h3`
+// color: grey;
+// font-size: 2rem;
+// margin-left: 10%;
+// color: #004d99;
+
+//     `;
+//     const StyledTaskContainer = styled.div`
+//     position: absolute;
+//     top: 32%;
+//     left: 30%;
+//     width: 500px;
+//     border: 3px solid #004d99;
+//     `;
+//     const StyledList = styled.li`
+// display: flex;
+//  flex-direction: row;
+//  justify-content: space-between;
+//  `;
+
+//     const StyledAddTask = styled.p`
+//  color: #004d99; 
+//  font-size: 2rem;
+//   margin-right: 50%;
+//  `;
+
+
+
+//     return (
+//         <StyledTaskContainer>
+//             <StyledNameHeading>{name}</StyledNameHeading>
+//             <ul>
+//                 <StyledList>
+//                     <BsPlusCircleFill
+//                         onClick={() => setModalFlag(true)}
+//                         style={{ color: "#004d99", fontSize: "4rem", marginTop: "5%", marginRight: "4%" }} />
+//                     <StyledAddTask>Add Task</StyledAddTask>
+//                     <AddNewPopUp
+//                         handleNewTaskContainer={handleNewTask}
+//                         modalIsOpen={modalIsOpen}
+//                         setModalFlag={setModalFlag} />
+//                 </StyledList>
+//                 {task.map((t) =>
+//                     <li>
+//                         <TaskItem
+//                             id={t.id}
+//                             handleTaskContainer={handleTaskContainer}
+//                             header={t.header}
+//                             text={t.text}
+//                             date={t.date}
+//                             isCompleted={t.isCompleted}
+//                         />
+//                     </li>)}
+//             </ul>
+//         </StyledTaskContainer >
+//     )
+// }
+
+// export default TaskContainer
+
+
 import React, { useState } from 'react'
 import "./main.css"
 import TaskItem from './TaskItem';
 import { BsPlusCircleFill } from "react-icons/bs";
-import { render } from '@testing-library/react';
-import PopUp from "./PopUp"
+import AddNewPopUp from "./NewPopUp"
+const TaskContainer = ({ id, name, task, handleInnerTaskChange, handleNewTaskContainer }) => {
 
-const TaskContainer = ({ id, name, task, handleInnerTaskChange }) => {
+    const [modalIsOpen, setModalFlag] = React.useState(false);
 
-    const [showComponent, setShowComponent] = useState(false)
+    function handleNewTask(header) {
+        handleNewTaskContainer(id, header)
+    }
 
     const handleTaskContainer = (inneridx, header, text, date, isCompleted) => {
         handleInnerTaskChange(id, inneridx, header, text, date, isCompleted)
     }
 
-
-    const onButtonClick = () => {
-        setShowComponent(true);
-    }
-
-
     return (
         <div className="task-container">
             <h3>{name}</h3>
             <ul>
+                <li style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                    <p>Add Task</p>
+                    <BsPlusCircleFill onClick={() => setModalFlag(true)} style={{ fontSize: "2rem", marginTop: "-10%", marginRight: "4%" }} />
+                    <AddNewPopUp handleNewTaskContainer={handleNewTask} modalIsOpen={modalIsOpen} setModalFlag={setModalFlag} />
+                </li>
                 {task.map((t) =>
                     <li>
                         <TaskItem
@@ -35,11 +115,6 @@ const TaskContainer = ({ id, name, task, handleInnerTaskChange }) => {
                         />
                     </li>)}
             </ul>
-            {/* <button className="btn" onClick={onButtonClick}>
-                <BsPlusCircleFill style={{ marginLeft: "70%", marginBottom: "2%", fontSize: "60px", color: "#004d99" }} />
-            </button> */}
-
-
         </div >
     )
 }

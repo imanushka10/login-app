@@ -16,15 +16,9 @@ const TaskDetail = ({ isCompleted, header, text, date }) => {
                 <input onClick={handleClick} className={setCheckDetail ? "show" : "hidden"} type="checkbox"></input>
                 <h1 style={{ marginLeft: "8%", marginTop: "-10%" }}>{header}</h1>
                 <GrEdit onClick={handleClick} style={{ fontSize: "2rem", marginTop: "-10%", marginRight: "4%" }} />
-
-
-                {/* {setIcon ?
-                    <RiCheckboxCircleLine style={{ fontSize: "4rem", marginTop: "-10%" }} />
-                    : <RiCheckboxBlankCircleLine style={{ fontSize: "4rem", marginTop: "-10%" }} />
-                } */}
             </div>
-            <p style={{ fontSize: "2rem", color: "grey", marginLeft: "20%", marginTop: "0px" }}>{text}</p>
-            <p style={{ fontSize: "1rem", color: "grey", fontStyle: "bold", marginLeft: "20%" }}>{date}</p>
+            <p style={{ fontSize: "2rem", color: "#004d99", marginLeft: "20%", marginTop: "0px" }}>{text}</p>
+            <p style={{ fontSize: "1rem", color: "#004d99", fontStyle: "bold", marginLeft: "20%" }}>{date}</p>
         </div>
     )
 }

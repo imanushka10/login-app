@@ -9,14 +9,30 @@ const TaskListContainer = () => {
             task: [{
                 id: 1,
                 header: "Campus build",
-                text: "LOrem",
-                date: "Add Date",
-                isCompleted: false,
-            },
-            ]
+                text: "Lorem",
+                date: "20/12/2021",
+                isCompleted: true,
+            }]
 
         }]
     )
+
+    const handleNewTaskContainer = (idx, header) => {
+        const newTasks = tasks.map((task) => {
+            if (idx === task.id) {
+                const newTask = {
+                    id: task.task.length + 1,
+                    header: header,
+                    text: '',
+                    date: '',
+                    isCompleted: false
+                }
+                task.task.push(newTask)
+            }
+            return task
+        })
+        setTasks(newTasks)
+    }
 
     const handleInnerTaskChange = (idx, inneridx, header, text, date, isCompleted) => {
         const newTasks = tasks.map((task) => {
@@ -46,8 +62,7 @@ const TaskListContainer = () => {
         <div>
             <ul>
                 {tasks.map((task) =>
-
-                    <li> <TaskContainer id={task.id} name={task.name} task={task.task} handleInnerTaskChange={handleInnerTaskChange} />
+                    <li> <TaskContainer id={task.id} name={task.name} task={task.task} handleInnerTaskChange={handleInnerTaskChange} handleNewTaskContainer={handleNewTaskContainer} />
                     </li>
                 )}
             </ul>

@@ -9,17 +9,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className="menu">
-        <div>
-          {window.location.pathname === '/Signin' && (
-            <div to="/Signin"></div>
-          )}
-          {window.location.pathname === '/Signup' && (
-            <div to="/Signup"></div>
-          )}
-          {window.location.pathname === '/main' && (
-            <div to="/main"></div>
-          )}
-        </div>
+        {window.location.pathname === '/Signin' && (
+          <div to="/Signin"></div>
+        )}
+        {window.location.pathname === '/Signup' && (
+          <div to="/Signup"></div>
+        )}
+        {window.location.pathname === '/main' && (
+          <div to="/main"></div>
+        )}
+
       </div>
 
       <div className="content">
