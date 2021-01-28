@@ -5,7 +5,7 @@ import SignupForm from "./SignupForm"
 
 const Signup = () => {
     return (
-        <div className="container">
+        <div>
             <h2>Sign up </h2>
             <SignupForm />
         </div>

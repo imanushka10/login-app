@@ -3,7 +3,8 @@ import Modal from 'react-modal';
 import { FaRegWindowClose } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri"
 import styled from "styled-components";
-
+import Colors from "../Utils/Constant"
+import { colors, Container } from '@material-ui/core';
 
 const customStyles = {
     content: {
@@ -18,12 +19,12 @@ const customStyles = {
 
 const StyledForm = styled.form`
 font-size: 1.8rem;
-color: #43677d;
+color: ${Colors.offWhite};
 `;
 
 const StyledPopUpContainer = styled.div`
 width: 650px;
-    height: 70vh;
+height: 70vh;
 `;
 
 const StyledIconContainer = styled.div`
@@ -31,26 +32,26 @@ const StyledIconContainer = styled.div`
 flex-direction: row;
  justify-content: space-between;
 font-size: 2rem;
-color: #43677d;
+color: ${Colors.blue};
                     
 `;
 const StyledHeaderInput = styled.input`
  width: 600px;
 height: 75px;
  font-size: 1.5rem;
- background-color: #e7f5fe;
+ background-color: ${Colors.lightBlue};
  border: none;
   margin-top: -20px;
-  color: grey;
+  color: ${Colors.grey};
 `;
 const StyledDateInput = styled.input`
 border: none;
  font-size: 1.5rem; 
- color: grey;
+ color: ${Colors.grey};
  `;
 const StyledDoneButton = styled.button`
- background-color: #004d99;
-  color: white;
+ background-color: ${Colors.blue};
+  color: ${Colors.white};
   border: none;
 width: 150px;
 height: 50px;

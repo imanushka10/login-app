@@ -4,7 +4,7 @@ import TaskItem from './TaskItem';
 import { BsPlusCircleFill } from "react-icons/bs";
 import AddNewPopUp from "./NewPopUp"
 import styled from "styled-components"
-
+import Colors from "../Utils/Constant"
 const TaskContainer = ({ id, name, task, handleInnerTaskChange, handleNewTaskContainer }) => {
 
     const [modalIsOpen, setModalFlag] = React.useState(false);
@@ -16,29 +16,33 @@ const TaskContainer = ({ id, name, task, handleInnerTaskChange, handleNewTaskCon
     const handleTaskContainer = (inneridx, header, text, date, isCompleted) => {
         handleInnerTaskChange(id, inneridx, header, text, date, isCompleted)
     }
+
+
     const StyledNameHeading = styled.h3`
-    color: grey;
+color: ${Colors.grey};
  font-size: 2rem;
  margin-left: 10%;
- color: #004d99;
+ color: ${Colors.blue};
     `;
     const StyledList = styled.li`
-    display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
     `;
     const StyledAddTask = styled.p`
-  color: #004d99; 
-  font-size: 2rem;
-   margin-right: 50%;
+color: ${Colors.blue}; 
+font-size: 2rem;
+margin-right: 50%;
   `;
+
+
     return (
         <div className="task-container">
             <StyledNameHeading>{name}</StyledNameHeading>
             <ul>
                 <StyledList >
+                    <BsPlusCircleFill onClick={() => setModalFlag(true)} className="plus-icon" />
                     <StyledAddTask>Add Task</StyledAddTask>
-                    <BsPlusCircleFill onClick={() => setModalFlag(true)} style={{ fontSize: "2rem", marginTop: "-10%", marginRight: "4%" }} />
                     <AddNewPopUp handleNewTaskContainer={handleNewTask} modalIsOpen={modalIsOpen} setModalFlag={setModalFlag} />
                 </StyledList>
                 {task.map((t) =>

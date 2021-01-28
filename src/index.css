@@ -1,5 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,500&display=swap');
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }

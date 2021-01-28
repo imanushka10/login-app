@@ -2,32 +2,6 @@
 * > li {
     list-style: none;
 }
-.nav-div{
-width: 100%;
-height: 100vh;
-background-color: white;
-position: relative;
-}
-.nav{
-width: 100%;
-height: 18vh;
-background-color: #004d99;
-display: flex;
-justify-content: space-between;
-}
-.heading{
-    color: white;
-    font-size: 40px;
-    margin-left: 10%;
-}
-.demo-img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-top: 1%;
-    margin-right: 5%;
-    background-color: white;
-}
  .task-container{
     position: absolute;
     top: 32%;
@@ -35,12 +9,15 @@ justify-content: space-between;
     width: 500px;
     border: 3px solid #004d99;
 } 
-.my-task{
-    color: grey;
-    margin-top: 10% !important;
-    
+.edit-icon{
+font-size:4rem;
+margin-right:4%;
+margin-top:2%;
+
 }
-.task-detail p{
-    color: grey;
-    margin-bottom: -15%;
+.plus-icon{
+font-size: 4rem;
+color: #004d99;
+margin-top: 5%;
+margin-right: 4%;
 }
