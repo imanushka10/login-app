@@ -28,13 +28,13 @@ justify-content: space-between;
     margin-right: 5%;
     background-color: white;
 }
-.task-container{
+ .task-container{
     position: absolute;
     top: 32%;
     left: 30%;
     width: 500px;
     border: 3px solid #004d99;
-}
+} 
 .my-task{
     color: grey;
     margin-top: 10% !important;
